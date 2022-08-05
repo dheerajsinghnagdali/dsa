@@ -1,0 +1,110 @@
+274 = 2 * 10^2 + 7 * 10^1 + 4 * 10^0
+binary to decimel
+101 = 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 4 + 1 = 5
+
+* Decimel to binary
+
+Q. 13 
+
+Answer:
+13 is odd number
+1
+
+13 devided by 2
+remainder = 6.5 -> 6
+6 is even number
+01
+
+6 devide by 2
+remainder = 3
+3 is odd number
+101
+
+3 devided by 2
+remainder = 1.5 -> 1
+1101
+
+
+addition in binary
+
+   101       1+1 = 2 in decimel, 10 is 2 in binary
++  111
+---------
+   1100
+
+Substarction in binary
+   1100
+  - 101
+--------
+
+Negative inverse in binary
+2's complement
+* method
+1. Invert all bits
+2. Add one
+
+Let's suppose we have an 32 bits integer, 101 negative inverse
+1. On inverting 101 bits we get ....111010
+010
++ 1
+----
+011
+
+  00000000000000000000000000001100
++ 11111111111111111111111111111011
+-----------------------------------
+  00000000000000000000000000000111
+
+ 1001
+ - 11
+
+11 negative inverse
+...111100
+add one
+....111100
+       + 1
+-----------
+.....111101
+
+  1001
++ 1101
+-------
+..00110
+
+Bitwise Operator
+
+ a | b | & | | | ^ |
+ 0 | 0 | 0 | 0 | 0 | 
+ 0 | 1 | 0 | 1 | 1 |
+ 1 | 0 | 0 | 1 | 1 |
+ 1 | 1 | 1 | 1 | 0 |
+
+(~) Inverse operator
+ ~ 5
+...000101 -> ...111010
+
+(>>) Right shift operator
+12 >> 2
+
+12 in binary
+1100 -> 0011 
+
+(<<) Left shift operator
+12 << 2
+1100 -> 110000
+
+a/2 equal to a >> 1
+
+a*2 equal to a << 1
+
+When two numbers are same then their XOR will always be 0
+5 ^ 5 = 1
+  101
+^ 101
+------
+  000
+
+If you perform XOR opration between 0 and any number, let suppose n then result will always be n
+5 ^ 0 = 5
+
+Rightmost set bit num & ~(num - 1)
