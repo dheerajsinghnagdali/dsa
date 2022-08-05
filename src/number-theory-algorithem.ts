@@ -54,3 +54,33 @@ function numOfTrailingZeroesInNumFactorial(num: number): number {
 
   return numOfTrailingZeroes;
 }
+
+// Q. Given an integer, write a function that returns true if the given number is palindrome, else false.
+
+// input: integer
+// output: if number is palidrome number return true else false
+
+// isPalindrome(202) -> true
+// isPalindrome(23) -> false
+// isPalindrome(0) -> true
+
+// one way is to reverse number and check if they are equal or not
+// start one pointer from front and one from end
+// check if left pointer value is equal to right pointer value
+// if not return false
+// if right pointer value is less then left pointer value return true
+
+function isPalindrome(num: number): boolean {
+  let left = 0;
+  let right = String(num).length - 1;
+
+  while (right >= left) {
+    if (Number(String(num)[left]) === Number(String(num)[right])) {
+      left++;
+      right--;
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
