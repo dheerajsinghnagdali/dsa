@@ -24,3 +24,33 @@ function factorial(num: number): number {
 
   return result;
 }
+
+// Q. given an integer n, write a function that returns count of trailing zeroes in n!
+
+// input: integers
+// output: trailing zeros in factorial of given number
+
+// trailingZeroInFactorial(5): 1
+// trailingZeroInFactorial(4): 0
+
+// A trailing zero is always produced by prime factor 2 and 5.
+// input: 5 There are one 5s and three 2s
+// We can easily observe that the number of 2s in prime factors is always more than or equal to the number 5s.
+// a simple way to calculate is by foor((n/5)), but number like 25, 125 have more than one five, 25/5 -> 5 but in 25! there are 6 five exist
+// formula n/5 + n/25 + n/125 + ...
+// assign numOfTrailingZeroes to 0
+// start a while loop from 1 and check if given number is greater and equal to i * 5
+// assign i to i * 5
+// add the result of floor(num/i) into numOfTrailingZeroes
+
+function numOfTrailingZeroesInNumFactorial(num: number): number {
+  let numOfTrailingZeroes = 0;
+
+  let i = 1;
+  while (num >= i * 5) {
+    i = i * 5;
+    numOfTrailingZeroes = numOfTrailingZeroes + Math.floor(num / i);
+  }
+
+  return numOfTrailingZeroes;
+}
