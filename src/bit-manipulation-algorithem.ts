@@ -61,10 +61,9 @@ function swap<T extends Restrict<T>>(options: T): T {
   f = f ^ s;
 
   return {
-    ...options,
     f,
     s,
-  };
+  } as T;
 }
 
 // Q. find bit at nth position
