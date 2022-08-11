@@ -13,7 +13,8 @@
     "strictPropertyInitialization": true,
     "rootDir": "./src",
     "outDir": "./build",
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "isolatedModules": true
   },
   "lib": ["es6"],
   "include": ["./src/**/*"]
