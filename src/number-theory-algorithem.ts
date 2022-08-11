@@ -66,7 +66,7 @@ function numOfTrailingZeroesInNumFactorial(num: number): number {
 
 // one way is to reverse number and check if they are equal or not
 // start one pointer from front and one from end
-// check if left pointer value is equal to right pointer value
+// check if left pointer value is equal or less than right point value
 // if not return false
 // if right pointer value is less then left pointer value return true
 
@@ -74,7 +74,7 @@ function isPalindrome(num: number): boolean {
   let left = 0;
   let right = String(num).length - 1;
 
-  while (right >= left) {
+  while (left <= right) {
     if (Number(String(num)[left]) === Number(String(num)[right])) {
       left++;
       right--;
@@ -83,4 +83,44 @@ function isPalindrome(num: number): boolean {
     }
   }
   return true;
+}
+
+// Q.Sieve of eratosthenes, Given a number n, print all primes smaller than or equal to n. It is also given that n is small number.
+
+// input: natural numbers
+// output: prime number
+
+// examples:
+// fn(2): 2 true
+// fn(3): 2 true 3 true
+
+// if num is prime, it means that there is no factor exit between 1 to num^1/2
+
+function sieveOfEratosthenes(num: number): boolean[] {
+  const isPrime = Array(num + 1).fill(true);
+  isPrime[0] = false;
+  isPrime[1] = false;
+
+  for (let i = 2; i * i <= num; i++) {
+    console.log("running!");
+    for (let j = i * 2; j < isPrime.length; j = j + i) {
+      isPrime[j] = false;
+    }
+  }
+
+  return isPrime;
+}
+
+// Q. gcd
+
+// input: both are numbers
+// output: greatest common factor
+
+// gcd(15, 27): 3
+
+// gcd(a, b) = gcd(b, a % b)
+//  a % b !== 0
+
+function gcd(a: number, b: number): number {
+  return b === 0 ? a : gcd(b, a % b);
 }

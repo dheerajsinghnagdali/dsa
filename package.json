@@ -11,7 +11,7 @@
   "homepage": "https://github.com/dheerajsinghnagdali/dsa#readme",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "watch": "tsc --noEmit --watch",
+    "watch": "rm -rf build && tsc --watch",
     "format": "prettier --write ."
   },
   "devDependencies": {

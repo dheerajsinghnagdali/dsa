@@ -1,18 +1,20 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "ES2022",
+    "target": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
     "skipLibCheck": true,
     "alwaysStrict": true,
-    "noEmit": true,
     "strict": true,
     "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
-    "strictPropertyInitialization": true
+    "strictPropertyInitialization": true,
+    "rootDir": "./src",
+    "outDir": "./build",
+    "noEmitOnError": true
   },
   "lib": ["es6"],
-  "include": ["**/*"]
+  "include": ["./src/**/*"]
 }
