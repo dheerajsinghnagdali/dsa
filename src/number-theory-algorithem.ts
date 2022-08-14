@@ -74,7 +74,7 @@ function isPalindrome(num: number): boolean {
   let left = 0;
   let right = String(num).length - 1;
 
-  while (left <= right) {
+  while (left < right) {
     if (Number(String(num)[left]) === Number(String(num)[right])) {
       left++;
       right--;
