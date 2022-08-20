@@ -107,4 +107,4 @@ When two numbers are same then their XOR will always be 0
 If you perform XOR opration between 0 and any number, let suppose n then result will always be n
 5 ^ 0 = 5
 
-Rightmost set bit num & ~(num - 1)
+Rightmost set bit -> num & ~(num - 1)

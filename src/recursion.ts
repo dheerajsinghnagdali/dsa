@@ -74,4 +74,44 @@ function powerSet(str: string, i = 0, curr = ""): void {
   powerSet(str, i + 1, curr);
 }
 
+function isSafe(board: number[][], row: number, col: number): boolean {
+  return true;
+}
+
+function nQueen<TBoard extends number[][]>(board: TBoard, row = 0) {
+  if (row === board.length) {
+    return true;
+  }
+  for (let col = 0; col < board[row].length; col++) {
+    if (isSafe(board, row, col)) {
+      board[row][col] = 1;
+      if (nQueen(board, row + 1)) {
+        return true;
+      }
+      board[row][col] = 0;
+    }
+  }
+
+  return false;
+}
+
+// Q. fibonacci sequence
+/**
+ * fn(0) -> 0
+ * fn(1) -> 1
+ */
+function recursiveFibonacci(n: number): number {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+}
+
+function factorial(n: number): number {
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
 export {};

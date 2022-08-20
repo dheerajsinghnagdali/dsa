@@ -15,7 +15,7 @@
 // each time multiply i with result
 // if num is zero return 1 and don't run loop
 
-function factorial(num: number): number {
+export function factorial(num: number): number {
   let result = 1;
 
   for (let i = num; i > 1; i--) {
@@ -43,7 +43,7 @@ function factorial(num: number): number {
 // assign i to i * 5
 // add the result of floor(num/i) into numOfTrailingZeroes
 
-function numOfTrailingZeroesInNumFactorial(num: number): number {
+export function numOfTrailingZeroesInNumFactorial(num: number): number {
   let numOfTrailingZeroes = 0;
 
   let i = 1;
@@ -70,7 +70,7 @@ function numOfTrailingZeroesInNumFactorial(num: number): number {
 // if not return false
 // if right pointer value is less then left pointer value return true
 
-function isPalindrome(num: number): boolean {
+export function isPalindrome(num: number): boolean {
   let left = 0;
   let right = String(num).length - 1;
 
@@ -96,13 +96,12 @@ function isPalindrome(num: number): boolean {
 
 // if num is prime, it means that there is no factor exit between 1 to num^1/2
 
-function sieveOfEratosthenes(num: number): boolean[] {
+export function sieveOfEratosthenes(num: number): boolean[] {
   const isPrime = Array(num + 1).fill(true);
   isPrime[0] = false;
   isPrime[1] = false;
 
   for (let i = 2; i * i <= num; i++) {
-    console.log("running!");
     for (let j = i * 2; j < isPrime.length; j = j + i) {
       isPrime[j] = false;
     }
@@ -121,8 +120,24 @@ function sieveOfEratosthenes(num: number): boolean[] {
 // gcd(a, b) = gcd(b, a % b)
 //  a % b !== 0
 
-function gcd(a: number, b: number): number {
+export function gcd(a: number, b: number): number {
   return b === 0 ? a : gcd(b, a % b);
+}
+
+// Q. Power two algorithem
+
+function powerTwo(n: number) {
+  if (n < 1) {
+    return false;
+  }
+  while (n > 1) {
+    // n % 2 !== 0
+    if ((n & 1) !== 0) {
+      return false;
+    }
+    n = n >> 2;
+  }
+  return true;
 }
 
 export {};
