@@ -7,9 +7,11 @@ class Node<T> {
 
 export class LinkedList<T> {
   head: Node<T> | null;
+  tail: Node<T> | null;
   size: number;
   constructor() {
     this.head = null;
+    this.tail = null;
     this.size = 0;
   }
 
@@ -26,6 +28,7 @@ export class LinkedList<T> {
 
     if (this.isEmpty()) {
       this.head = node;
+      this.tail = node;
     } else {
       node.next = this.head;
       this.head = node;
@@ -37,14 +40,12 @@ export class LinkedList<T> {
     const node = new Node(value);
 
     // check if list is empty
-    if (!this.head) {
+    if (!this.tail) {
       this.head = node;
+      this.tail = node;
     } else {
-      let prev = this.head;
-      while (prev.next) {
-        prev = prev.next;
-      }
-      prev.next = node;
+      this.tail.next = node;
+      this.tail = node;
     }
     this.size++;
   }
@@ -156,6 +157,36 @@ export class LinkedList<T> {
     }
     this.head = prev;
   }
+
+  removeFromFront() {
+    if (!this.head) {
+      return null;
+    }
+    const rmNode = this.head;
+    this.head = this.head.next;
+    this.size++;
+    return rmNode.value;
+  }
+
+  removeFromEnd() {
+    if (!this.tail) {
+      return null;
+    }
+    const rmNode = this.tail;
+    if (this.size === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      let prev = this.head as Node<T>;
+      while (prev.next !== this.tail) {
+        prev = prev.next as Node<T>;
+      }
+      prev.next = null;
+      this.tail = prev;
+    }
+    this.size++;
+    return rmNode.value;
+  }
 }
 
 const list = new LinkedList<number>();
@@ -166,10 +197,17 @@ console.log("List size", list.getSize());
 list.append(10);
 list.append(20);
 list.append(30);
+list.append(40);
 list.insert(15, 1);
 list.print();
 
 console.log(list.search(20));
 
-list.reverse();
+list.prepend(50);
+list.print();
+
+list.removeFromFront();
+list.print();
+
+list.removeFromEnd();
 list.print();
