@@ -78,6 +78,65 @@ class BST<T> {
       console.log(root.value);
     }
   }
+
+  levelOrder() {
+    const queue: (Node<T> | null)[] = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let curr = queue.shift();
+      console.log(curr?.value);
+      if (curr?.left) {
+        queue.push(curr.left);
+      }
+      if (curr?.right) {
+        queue.push(curr.right);
+      }
+    }
+  }
+
+  min(root: Node<T>): T {
+    if (!root.left) {
+      return root.value;
+    }
+    return this.min(root.left);
+  }
+
+  max(root: Node<T>): T {
+    if (!root.right) {
+      return root.value;
+    }
+    return this.max(root.right);
+  }
+
+  delete(root: Node<T> | null, value: T) {
+    this.root = this.deleteNode(root, value);
+  }
+
+  deleteNode(root: Node<T> | null, value: T): Node<T> | null {
+    if (root === null) {
+      return root;
+    }
+
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      if (!root.left && !root.right) {
+        return null;
+      }
+
+      if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+      root.value = this.min(root.right);
+      root.right = this.deleteNode(root.right, root.value);
+    }
+
+    return root;
+  }
 }
 
 const bst = new BST<number>();
@@ -96,8 +155,19 @@ bst.insert(-1);
 
 console.log(bst.search(bst.root, -1));
 
+console.log("preOrder>>");
 bst.preOrder(bst.root);
+
+console.log("inOrder>>");
 bst.inOrder(bst.root);
+
+console.log("postOrder>>");
 bst.postOrder(bst.root);
+
+console.log("deleteNode>>");
+bst.delete(bst.root, -1);
+
+console.log("levelOrder>>");
+bst.levelOrder();
 
 export {};
