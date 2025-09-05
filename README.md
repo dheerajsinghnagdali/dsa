@@ -18,7 +18,7 @@ This repository contains implementations of common data structures and algorithm
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/dsa-typescript.git
+   git clone https://github.com/dheerajsinghnagdali/dsa.git
    ```
 2. Navigate to the project directory:
    ```bash
