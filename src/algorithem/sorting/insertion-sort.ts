@@ -1,4 +1,4 @@
-function insertionSort<TArray extends number[]>(nums: TArray): TArray {
+export function insertionSort<TArray extends number[]>(nums: TArray): TArray {
   for (let i = 1; i < nums.length; i++) {
     const temp = nums[i];
 
@@ -11,5 +11,3 @@ function insertionSort<TArray extends number[]>(nums: TArray): TArray {
   }
   return nums;
 }
-
-export {};

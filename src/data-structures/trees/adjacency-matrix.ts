@@ -5,5 +5,3 @@ const adjacencyMatrix = [
 ];
 
 console.log(adjacencyMatrix[0][0]);
-
-export {};

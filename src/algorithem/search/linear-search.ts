@@ -1,4 +1,4 @@
-function linearSearch<T>(array: T[], n: T): boolean {
+export function linearSearch<T>(array: T[], n: T): boolean {
   for (const num of array) {
     if (num === n) {
       return true;
@@ -6,5 +6,3 @@ function linearSearch<T>(array: T[], n: T): boolean {
   }
   return false;
 }
-
-export {};

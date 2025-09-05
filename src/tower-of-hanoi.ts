@@ -1,4 +1,4 @@
-function towerOfHanoi(
+export function towerOfHanoi(
   n: number,
   fromRod: string,
   toRod: string,
@@ -12,7 +12,3 @@ function towerOfHanoi(
   console.log(`Move disk ${n} from ${fromRod} to ${toRod}`);
   towerOfHanoi(n - 1, usingRod, toRod, fromRod);
 }
-
-towerOfHanoi(3, "A", "C", "B");
-
-export {};

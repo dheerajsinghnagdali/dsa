@@ -1,7 +1,7 @@
-// Q. odd or even
+// Odd or even
 
-// input: positive integer
-// output: odd or even
+// Input: positive integer
+// Output: odd or even
 
 // oddEven(0): even
 // oddEven(1): odd
@@ -11,20 +11,20 @@
 // 3 -> 011
 // 4 -> 100
 
-// at the end of a odd number we get 1 in binary
-// at the end of a even number we get 0 in binary
+// At the end of a odd number, we get 1 in binary
+// At the end of a even number, we get 0 in binary
 
-function oddEven(num: number): "odd" | "even" {
+export function oddEven(num: number): "odd" | "even" {
   if ((num & 1) === 0) {
     return "even";
   }
   return "odd";
 }
 
-// Q. swap two numbers.
+// Swap two numbers.
 
-// input: two numbers
-// output: swaped numbers
+// Input: two numbers
+// Output: swaped numbers
 
 // swap(12, 23): {f: 23, s: 12}
 
@@ -54,7 +54,7 @@ function oddEven(num: number): "odd" | "even" {
 
 type Restrict<T> = keyof T extends "f" | "s" ? { f: number; s: number } : never;
 
-function swap<T extends Restrict<T>>(options: T): T {
+export function swap<T extends Restrict<T>>(options: T): T {
   let { f, s } = options;
   f = f ^ s;
   s = f ^ s;
@@ -66,15 +66,15 @@ function swap<T extends Restrict<T>>(options: T): T {
   } as T;
 }
 
-// Q. find bit at nth position
+// Find bit at nth position
 
-// input: number
-// output: bit
+// Input: number
+// Output: bit
 
-// make a mask by left shifting all the digits until nth position
-// do a &(and) operation between mask and number, and return this
+// Make a mask by left shifting all the digits until nth position
+// Do a &(and) operation between mask and number, and return this
 
-function findBit(num: number, at: number) {
+export function findBit(num: number, at: number) {
   const mask = 1 << at;
 
   if ((mask & num) === 0) {
@@ -83,38 +83,38 @@ function findBit(num: number, at: number) {
   return 1;
 }
 
-// Q. set bit
-// input: num: number, at: number
-// output: set bit number
+// Set bit
+// Input: num: number, at: number
+// Output: set bit number
 
 // setBit(2, 0): 3
 
-// make a mask by left shifting all the digits until nth position
-// do the or operation between mask and number and return the result
+// Make a mask by left shifting all the digits until nth position
+// Do the or operation between mask and number and return the result
 
-function setBit(num: number, at: number) {
+export function setBit(num: number, at: number) {
   const mask = 1 << at;
   return num | mask;
 }
 
-// Q. clear bit
+// Clear bit
 
-// input: num: number, at: number
-// ouput: clear bit number
+// Input: num: number, at: number
+// Output: clear bit number
 
 // clearBit(2, 1): 0
 
-//  make a mask by left shifting all the digits until nth position after that invert all bits
-// do the &(and) operation between num and mask
+// Make a mask by left shifting all the digits until nth position after that invert all bits
+// Do the &(and) operation between num and mask
 
-function clearBit(num: number, at: number) {
+export function clearBit(num: number, at: number) {
   const mask = ~(1 << at);
   return num & mask;
 }
 
-// Q. find the only non-repeating element in an array where every element repeat twice
+// Find the only non-repeating element in an array where every element repeat twice
 
-function findUnique(arr: number[]): number {
+export function findUnique(arr: number[]): number {
   let unique = 0;
   for (const num of arr) {
     unique = num ^ unique;
@@ -123,9 +123,9 @@ function findUnique(arr: number[]): number {
   return unique;
 }
 
-// Q. Find two non-repeating elements in an array where every element repeat twice
+// Find two non-repeating elements in an array where every element repeat twice
 
-function findTwoUnique(arr: number[]): [number, number] {
+export function findTwoUnique(arr: number[]): [number, number] {
   let finalXOR = 0;
 
   for (const num of arr) {
@@ -147,9 +147,9 @@ function findTwoUnique(arr: number[]): [number, number] {
   return [a, b];
 }
 
-// Q. find number of bits to change to convert a to b
+// Find number of bits to change to convert a to b
 
-function countBitsFlip(f: number, s: number): number {
+export function countBitsFlip(f: number, s: number): number {
   let xor = f ^ s;
 
   let count = 0;
@@ -162,5 +162,3 @@ function countBitsFlip(f: number, s: number): number {
 
   return count;
 }
-
-export {};

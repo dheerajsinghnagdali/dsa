@@ -1,4 +1,4 @@
-function binarySearch<T>(array: T[], target: T): number {
+export function binarySearch<T>(array: T[], target: T): number {
   let left = 0;
   let right = array.length - 1;
 
@@ -16,7 +16,7 @@ function binarySearch<T>(array: T[], target: T): number {
   return -1;
 }
 
-function recursiveBinarySearch<T>(
+export function recursiveBinarySearch<T>(
   array: T[],
   target: T,
   left = 0,
@@ -34,5 +34,3 @@ function recursiveBinarySearch<T>(
   }
   return recursiveBinarySearch(array, target, mid + 1, right);
 }
-
-export {};

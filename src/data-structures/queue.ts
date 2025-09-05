@@ -37,16 +37,3 @@ export class Queue<T> {
     console.log(this.items);
   }
 }
-
-const queue = new Queue<string | number>();
-console.log(queue.isEmpty());
-
-queue.enqueue("John");
-queue.enqueue("Alex");
-queue.enqueue("Jony");
-
-queue.print();
-
-queue.dequeue();
-
-queue.print();

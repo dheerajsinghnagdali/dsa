@@ -1,6 +1,6 @@
-import { swap } from "./bubble-sort";
+import { swap } from "./bubble-sort.ts";
 
-function selectionSort<TArray extends number[]>(nums: TArray): TArray {
+export function selectionSort<TArray extends number[]>(nums: TArray): TArray {
   const len = nums.length;
 
   for (let i = 0; i < len - 1; i++) {
@@ -19,7 +19,3 @@ function selectionSort<TArray extends number[]>(nums: TArray): TArray {
   }
   return nums;
 }
-
-console.log(selectionSort([1, 2, 0, 4, -1]));
-
-export {};

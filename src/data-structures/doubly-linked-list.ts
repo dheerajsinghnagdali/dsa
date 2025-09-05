@@ -98,20 +98,3 @@ export class DoublyLinkedList<T> {
     }
   }
 }
-
-const list = new DoublyLinkedList<number>();
-list.print();
-list.prepend(10);
-list.prepend(20);
-list.prepend(30);
-list.prepend(40);
-
-list.print();
-
-list.removeFromFront();
-list.print();
-
-list.removeFromEnd();
-list.print();
-
-list.printReverse();

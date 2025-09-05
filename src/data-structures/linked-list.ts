@@ -1,4 +1,4 @@
-class Node<T> {
+export class Node<T> {
   next: Node<T> | null;
   constructor(public value: T) {
     this.next = null;
@@ -188,26 +188,3 @@ export class LinkedList<T> {
     return rmNode.value;
   }
 }
-
-const list = new LinkedList<number>();
-console.log("Is list empty?", list.isEmpty());
-list.print();
-console.log("List size", list.getSize());
-
-list.append(10);
-list.append(20);
-list.append(30);
-list.append(40);
-list.insert(15, 1);
-list.print();
-
-console.log(list.search(20));
-
-list.prepend(50);
-list.print();
-
-list.removeFromFront();
-list.print();
-
-list.removeFromEnd();
-list.print();

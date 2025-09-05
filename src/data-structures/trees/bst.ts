@@ -1,4 +1,4 @@
-class Node<T> {
+export class Node<T> {
   left: Node<T> | null;
   right: Node<T> | null;
   constructor(public value: T) {
@@ -7,7 +7,7 @@ class Node<T> {
   }
 }
 
-class BST<T> {
+export class BST<T> {
   root: Node<T> | null;
   constructor() {
     this.root = null;
@@ -83,7 +83,7 @@ class BST<T> {
     const queue: (Node<T> | null)[] = [];
     queue.push(this.root);
     while (queue.length) {
-      let curr = queue.shift();
+      const curr = queue.shift();
       console.log(curr?.value);
       if (curr?.left) {
         queue.push(curr.left);
@@ -138,36 +138,3 @@ class BST<T> {
     return root;
   }
 }
-
-const bst = new BST<number>();
-bst.insert(1);
-bst.insert(0);
-bst.insert(2);
-bst.insert(-1);
-
-/* 
-         1
-       /  \
-     0     2
-    /
-  -1
-*/
-
-console.log(bst.search(bst.root, -1));
-
-console.log("preOrder>>");
-bst.preOrder(bst.root);
-
-console.log("inOrder>>");
-bst.inOrder(bst.root);
-
-console.log("postOrder>>");
-bst.postOrder(bst.root);
-
-console.log("deleteNode>>");
-bst.delete(bst.root, -1);
-
-console.log("levelOrder>>");
-bst.levelOrder();
-
-export {};

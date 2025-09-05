@@ -1,4 +1,4 @@
-function merge<TArray extends number[]>(
+export function merge<TArray extends number[]>(
   nums: TArray,
   left: number,
   mid: number,
@@ -41,7 +41,7 @@ function merge<TArray extends number[]>(
   return nums;
 }
 
-function mergeSort<TArray extends number[]>(
+export function mergeSort<TArray extends number[]>(
   nums: TArray,
   left = 0,
   right = nums.length - 1,
@@ -54,5 +54,3 @@ function mergeSort<TArray extends number[]>(
   }
   return nums;
 }
-
-export {};

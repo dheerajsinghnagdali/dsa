@@ -1,4 +1,4 @@
-import { LinkedList } from "./linked-list";
+import { LinkedList } from "./linked-list.ts";
 
 export class LinkedListQueue<T> {
   list: LinkedList<T>;
@@ -30,11 +30,3 @@ export class LinkedListQueue<T> {
     this.list.print();
   }
 }
-
-const queue = new LinkedListQueue<number>();
-queue.print();
-queue.enqueue(10);
-queue.enqueue(20);
-queue.enqueue(30);
-
-queue.print();

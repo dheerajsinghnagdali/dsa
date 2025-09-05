@@ -5,5 +5,3 @@ const adjacencyList = {
 };
 
 console.log(adjacencyList["C"]);
-
-export {};

@@ -1,4 +1,4 @@
-function cartesianProduct<T, P>(fArray: T[], sArray: P[]): (T | P)[][] {
+export function cartesianProduct<T, P>(fArray: T[], sArray: P[]): (T | P)[][] {
   const result: (T | P)[][] = [];
 
   for (const fElement of fArray) {
@@ -8,5 +8,3 @@ function cartesianProduct<T, P>(fArray: T[], sArray: P[]): (T | P)[][] {
   }
   return result;
 }
-
-export {};

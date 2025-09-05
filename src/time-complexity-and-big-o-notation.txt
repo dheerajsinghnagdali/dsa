@@ -1,8 +1,8 @@
-Time complexity -: The time taken by algorithm as a function of the length of input 
+Time complexity -: The time taken by algorithm as a export function  of the length of input 
 
 arr = [1, 2, 3, 4]
 
-function find(value, arr) {
+export function  find(value, arr) {
   for(iterator of arr) {
     if (iterator === value) {
       return true
@@ -12,7 +12,7 @@ function find(value, arr) {
 }
 find(5, arr)
 
-Big-O notation of find function is -> O(n)
+Big-O notation of find export function  is -> O(n)
 
 f(n) = 3n^3 + 5n -> O(n^3)
 f(n) = n + 100log(n) -> O(n)

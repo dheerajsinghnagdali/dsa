@@ -29,14 +29,3 @@ export class Stack<T> {
     console.log(this.items.toString());
   }
 }
-
-const stack = new Stack<number>();
-console.log(stack.isEmpty());
-
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(4);
-
-console.log(stack.size());
-stack.print();

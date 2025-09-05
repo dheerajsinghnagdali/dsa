@@ -64,6 +64,3 @@ export class CircularQueue<T> {
     }
   }
 }
-
-const cq = new CircularQueue<number>(5);
-console.log(cq.isEmpty());

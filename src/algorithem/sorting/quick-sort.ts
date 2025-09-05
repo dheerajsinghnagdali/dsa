@@ -1,6 +1,6 @@
-import { swap } from "./bubble-sort";
+import { swap } from "./bubble-sort.ts";
 
-function partition(nums: number[], low: number, high: number): number {
+export function partition(nums: number[], low: number, high: number): number {
   const pivot = nums[low];
   let i = low;
   let j = high;
@@ -16,7 +16,7 @@ function partition(nums: number[], low: number, high: number): number {
   return j;
 }
 
-function quickSort<TArray extends number[]>(
+export function quickSort<TArray extends number[]>(
   nums: TArray,
   low = 0,
   high = nums.length - 1,
@@ -28,5 +28,3 @@ function quickSort<TArray extends number[]>(
   }
   return nums;
 }
-
-export {};

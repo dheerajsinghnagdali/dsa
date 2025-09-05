@@ -1,4 +1,4 @@
-import { LinkedList } from "./linked-list";
+import { LinkedList } from "./linked-list.ts";
 
 export class LinkedListStack<T> {
   list: LinkedList<T>;
@@ -30,15 +30,3 @@ export class LinkedListStack<T> {
     this.list.print();
   }
 }
-
-const stack = new LinkedListStack<number>();
-stack.print();
-stack.push(10);
-stack.push(20);
-stack.push(30);
-
-console.log(stack.list.getSize());
-
-stack.print();
-stack.pop();
-stack.print();

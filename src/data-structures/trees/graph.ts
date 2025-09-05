@@ -1,4 +1,4 @@
-class Graph {
+export class Graph {
   adjacencyList: Record<string, Set<string>>;
   constructor() {
     this.adjacencyList = {};
@@ -48,20 +48,3 @@ class Graph {
     }
   }
 }
-
-const graph = new Graph();
-graph.addVertex("A");
-graph.addVertex("B");
-graph.addVertex("C");
-
-graph.addEge("A", "B");
-graph.addEge("B", "C");
-
-graph.display();
-
-console.log(graph.hasEdge("A", "C"));
-
-graph.removeVertex("A");
-graph.display();
-
-export {};

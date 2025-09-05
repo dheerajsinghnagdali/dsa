@@ -6,7 +6,7 @@ export function swap<TArray extends number[]>(
   [array[f], array[s]] = [array[s], array[f]];
 }
 
-function bubbleSort<TArray extends number[]>(nums: TArray): TArray {
+export function bubbleSort<TArray extends number[]>(nums: TArray): TArray {
   const len = nums.length;
 
   for (let i = 0; i < len - 1; i++) {
@@ -26,5 +26,3 @@ function bubbleSort<TArray extends number[]>(nums: TArray): TArray {
   }
   return nums;
 }
-
-export {};
