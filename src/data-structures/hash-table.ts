@@ -1,70 +1,59 @@
 export class HashTable<T> {
-  table: [string, T][][];
+  table: [string, T][][]
   constructor(public size: number) {
-    this.table = new Array(size);
+    this.table = new Array(size)
   }
 
   hash(key: string) {
-    let total = 0;
+    let total = 0
     for (let i = 0; i < key.length; i++) {
-      total = key.charCodeAt(i);
+      total = key.charCodeAt(i)
     }
-    return total % this.size;
+    return total % this.size
   }
 
   set(key: string, value: T) {
-    const index = this.hash(key);
-    const bucket = this.table[index];
+    const index = this.hash(key)
+    const bucket = this.table[index]
 
     if (bucket) {
-      const sameKeyItem = bucket.find((item) => item[0] === key);
+      const sameKeyItem = bucket.find((item) => item[0] === key)
       if (sameKeyItem) {
-        sameKeyItem[1] = value;
+        sameKeyItem[1] = value
       } else {
-        bucket.push([key, value]);
+        bucket.push([key, value])
       }
     } else {
-      this.table[index] = [[key, value]];
+      this.table[index] = [[key, value]]
     }
   }
 
   get(key: string) {
-    const index = this.hash(key);
-    const bucket = this.table[index];
+    const index = this.hash(key)
+    const bucket = this.table[index]
     if (bucket) {
-      const sameKeyItem = bucket.find((item) => item[0] === key);
+      const sameKeyItem = bucket.find((item) => item[0] === key)
       if (sameKeyItem) {
-        return sameKeyItem[1];
+        return sameKeyItem[1]
       }
     }
   }
 
   remove(key: string) {
-    const index = this.hash(key);
-    const bucket = this.table[index];
+    const index = this.hash(key)
+    const bucket = this.table[index]
     if (bucket) {
-      const filterdBucket = bucket.filter((item) => item[0] !== key);
-      this.table[index] = filterdBucket;
+      const filterdBucket = bucket.filter((item) => item[0] !== key)
+      this.table[index] = filterdBucket
     }
   }
 
   display() {
     for (let i = 0; i < this.table.length; i++) {
-      const element = this.table[i];
+      const element = this.table[i]
       if (element) {
-        console.log(i, element);
+        console.log(i, element)
       }
     }
   }
 }
-
-const ht = new HashTable<string | number>(10);
-ht.set("0", "neeraj");
-ht.set("1", "dheeraj");
-ht.set("0", "akash");
-
-console.log(ht.get("0"));
-console.log(ht.get("1"));
-ht.remove("0");
-
-ht.display();
